@@ -1,8 +1,6 @@
-from operator import truth
 import re
 from lxml import etree
 from tqdm import tqdm
-import sys
 import requests
 import random
 import time
