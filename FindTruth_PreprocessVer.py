@@ -7,7 +7,7 @@ import time
 import threading
 
 URL = "https://www.asoulwikisite.com"
-LOAD_FROM_TXT = True
+LOAD_FROM_TXT = False
 
 class TruthFinder:
     def __init__(self, url, LOAD_FROM_TXT):
@@ -91,7 +91,7 @@ class TruthFinder:
     def __scratch_ip(self):
         print('==========正在注入代理IP地址============')
         proxies_list = []
-        for page in tqdm(range(50,100)):
+        for page in tqdm(range(50,300)):
             # print('==========正在获取第{}页数据============'.format(str(page)))
             base_url='https://www.kuaidaili.com/free/inha/{}/'.format(str(page))
             headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'}
