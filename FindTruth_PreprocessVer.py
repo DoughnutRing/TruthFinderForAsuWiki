@@ -7,7 +7,7 @@ import time
 import threading
 
 URL = "https://www.asoulwikisite.com"
-LOAD_FROM_TXT = False
+LOAD_FROM_TXT = True
 
 class TruthFinder:
     def __init__(self, url, LOAD_FROM_TXT):
@@ -188,9 +188,9 @@ class TruthFinder:
             t = threading.Thread(target = self.__connect_truth, args=[random.choice(self.urls)])
             t.start()
 
-            # 每一组访问中睡眠时间为0.05-0.25s，每组结束后更换组大小和随机数种子
+            # 每一组访问中睡眠时间为0.002-0.01s，每组结束后更换组大小和随机数种子
             if self.count % self.group_size:
-                sleeptime = random.randint(1,5) / 50 
+                sleeptime = random.randint(1,5) / 500 
             else: 
                 # sleeptime = 61 
                 sleeptime = random.randint(1,5) 
