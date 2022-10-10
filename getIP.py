@@ -2,7 +2,6 @@ from lxml import etree
 import requests
 import random
 import time 
-import pymysql
 
 proxies_list=[]
 def check_ip(proxies_list):
@@ -26,7 +25,8 @@ def check_ip(proxies_list):
     print(can_use)
     return can_use
 
-for page in range(50,350):
+start_page = random.randint(1, 2000)
+for page in range(start_page,start_page+300):
     print('==========正在获取第{}页数据============'.format(str(page)))
     base_url='https://www.kuaidaili.com/free/inha/{}/'.format(str(page))
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'}
